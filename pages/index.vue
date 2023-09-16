@@ -30,6 +30,7 @@ export default {
 </script>
 
 <template>
+  <Head><Title>Chemical icons pack</Title></Head>
   <div class="limited-width">
     <div class="head-text">
       <h1>CHEMICAL ICONS PACK</h1>
