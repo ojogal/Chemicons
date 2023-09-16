@@ -5,7 +5,7 @@
   <div class="footer">
     <div class="limited-width container">
       <div>
-        <p>© Chemicons | All Rights Reserved. | <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
+        <p>© Chemicons | All Rights Reserved. | <NuxtLink to="/policy">Privacy Policy</NuxtLink>
         </p>
       </div>
       <div class="right-text">

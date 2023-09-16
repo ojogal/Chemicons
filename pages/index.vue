@@ -172,4 +172,10 @@ h1 {
     font-size: 14px;
   }
 }
+
+.copied-card {
+  p {
+    font-size: 18px !important;
+  }
+}
 </style>
