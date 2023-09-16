@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Sans:wght@800&family=Poppins:wght@400;500;700&display=swap');
+@import "_variables";
+
+body {
+  background-color: $color-white-base;
+  font-family: Poppins;
+  font-size: 16px;
+  color: $color-black-base;
+}
+
+.limited-width {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  @media screen and (max-width: 1439px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
