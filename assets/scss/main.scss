@@ -6,6 +6,7 @@ body {
   font-family: Poppins;
   font-size: 16px;
   color: $color-black-base;
+  // width: 100% !important;
 }
 
 .limited-width {
@@ -13,17 +14,21 @@ body {
   width: 100%;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 0 20px; 
+  box-sizing: border-box !important;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1526px) {
     padding-left: 80px;
     padding-right: 80px;
-    padding: 0 80px; 
   }
 
-  @media (max-width: 428px) {
+  @media (max-width: 740px) {
     padding-left: 20px;
-    padding-right: 40px;
-    padding: 0 40px;
+    padding-right: 20px;
   }
+
+  @media (max-width: 346px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
 }

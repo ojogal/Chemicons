@@ -85,7 +85,7 @@ h1 {
   display: flex;
   margin-bottom: 10px;
 
-  @media (max-width: 780px) {
+  @media (max-width: 867px) {
     flex-direction: column;
   }
   h1 {
@@ -111,26 +111,24 @@ h1 {
   .icon-card {
     display: flex;
     flex-direction: column;
-    max-width: 150px;
-    width: 100%;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: auto;
-    padding: 24px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     border-radius: 24px;
     background: #F0F0F3;
     box-shadow: -3px -3px 16px 0px #FFF, 8px 8px 16px 0px #DEDEDE;
+    text-align: center;
     @media (max-width: 1240px) {
-      width: min(150px, 7rem);
-      height: min(150px, 10rem);
+      width: 100%;
     }
     p {
       font-family: Newsreader;
       font-size: 13px;
       font-weight: 500;
-      margin: 15px 0 0 0;
+      margin: 0 0 25px 0;
     }
   }
   .load-more-wrapper {
@@ -153,10 +151,6 @@ h1 {
     p {
       font-weight: 500;
       margin-left: auto;
-
-      @media (max-width: 1440px) {
-        // margin-right: 40px;
-      }
     }
   }
   .icons-section {
@@ -165,16 +159,14 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin: 0 auto;
-    @media (max-width: 768px) {
+    width: 100%;
+    @media (max-width: 924px) {
+      // gap: 20px;
       grid-template-columns: repeat(3, 1fr);
     }
-    @media (max-width: 572px) {
+    @media (max-width: 546px) {
       grid-template-columns: repeat(2, 1fr);
     }
-
-    // @media (max-width: 380px) {
-    //   grid-template-columns: repeat(1, 1fr);
-    // }
   }
   .paragraph-text-wrapper {
     p {
@@ -188,6 +180,8 @@ h1 {
     }
   }
   .copied-card {
+    width: 100%;
+    height: 100%;
     p {
       font-size: 18px;
     }
