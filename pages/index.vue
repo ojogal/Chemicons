@@ -76,6 +76,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@import "~/assets/scss/_variables";
 
 h1 {
   font-family: 'Noto Sans', sans-serif;
@@ -147,7 +148,7 @@ h1 {
       font-family: Newsreader;
       font-size: 13px;
       font-weight: 500;
-      margin: 0 0 25px 0;
+      margin: 0px 15px 25px 15px;
     }
   }
 
@@ -161,7 +162,7 @@ h1 {
       font-weight: 500;
       cursor: pointer;
       font-size: 16px;
-      color: #333333 !important;
+      color: $color-black-base !important;
     }
   }
 
@@ -217,6 +218,10 @@ h1 {
     @media (max-width: 546px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @media (max-width: 368px) {
+      gap: 10px
+    }
   }
 
   .paragraph-text-wrapper {
@@ -233,9 +238,6 @@ h1 {
   }
 
   .copied-card {
-    width: 100%;
-    height: 100%;
-
     p {
       font-size: 18px;
     }

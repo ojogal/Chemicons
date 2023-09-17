@@ -23,12 +23,17 @@
   .container {
     display: flex;
     flex-direction: row;
+    @media (max-width: 864px) {
+      align-items: center;
+      flex-direction: column-reverse !important;
+    }
   }
 
   p {
     color: $color-black-base;
     opacity: .4;
-    font-size: 13px
+    font-size: 13px;
+    text-align: center;
   }
 
   a {
@@ -38,6 +43,10 @@
 
   .right-text {
     margin-left: auto;
+    @media (max-width: 864px) {
+      margin-left: 0;
+      line-height: 1;
+    }
   }
 }
 </style>
