@@ -76,10 +76,12 @@ export default {
 </template>
 
 <style scoped lang="scss">
+
 h1 {
   font-family: 'Noto Sans', sans-serif;
   font-size: 48px;
 }
+
 .head-text {
   gap: 20px;
   display: flex;
@@ -88,10 +90,17 @@ h1 {
   @media (max-width: 867px) {
     flex-direction: column;
   }
+
   h1 {
     margin: 0;
     line-height: 1;
+
+    @media (max-width: 608px) {
+      font-size: 36px;
+      text-align: center;
+    }
   }
+
   .icon-details {
     margin-top: auto;
 
@@ -101,13 +110,21 @@ h1 {
     }
   }
 }
+
 .content {
   display: flex;
   gap: 20px;
   min-height: 100vh;
-  @media (max-width: 1440px) {
+
+  @media (max-width: 1526px) {
     flex-direction: column;
+    gap: 0;
   }
+
+  @media (max-width: 680px) {
+    gap: 20px;
+  }
+
   .icon-card {
     display: flex;
     flex-direction: column;
@@ -121,9 +138,11 @@ h1 {
     background: #F0F0F3;
     box-shadow: -3px -3px 16px 0px #FFF, 8px 8px 16px 0px #DEDEDE;
     text-align: center;
+
     @media (max-width: 1240px) {
       width: 100%;
     }
+
     p {
       font-family: Newsreader;
       font-size: 13px;
@@ -131,28 +150,57 @@ h1 {
       margin: 0 0 25px 0;
     }
   }
+
   .load-more-wrapper {
     display: flex;
     justify-content: center;
+
     button {
       border: none;
       background: none;
       font-weight: 500;
       cursor: pointer;
       font-size: 16px;
+      color: #333333 !important;
     }
   }
+
   .info-paragraph {
     line-height: 0;
     margin-top: 20px;
     margin-bottom: 10px;
     display: flex;
 
+    @media (max-width: 1526px) {
+      margin-top: 0;
+    }
+
     p {
       font-weight: 500;
       margin-left: auto;
+
+      @media (max-width: 1526px) {
+        margin-right: 45px;
+      }
+
+      @media (max-width: 1380px) {
+        margin-right: 35px;
+      }
+
+      @media (max-width: 1280px) {
+        margin-right: 25px;
+      }
+
+      @media (max-width: 1240px) {
+        margin-right: 0;
+      }
+
+      @media (max-width: 680px) {
+        margin-left: 0;
+      }
     }
   }
+
   .icons-section {
     margin-bottom: 60px !important;
     display: grid;
@@ -160,28 +208,34 @@ h1 {
     gap: 40px;
     margin: 0 auto;
     width: 100%;
+
     @media (max-width: 924px) {
       // gap: 20px;
       grid-template-columns: repeat(3, 1fr);
     }
+
     @media (max-width: 546px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
   .paragraph-text-wrapper {
     p {
       max-width: 250px;
       margin: 0;
       text-align: justify;
       font-size: 14px;
-      @media (max-width: 1440px) {
+
+      @media (max-width: 1526px) {
         max-width: 550px
       }
     }
   }
+
   .copied-card {
     width: 100%;
     height: 100%;
+
     p {
       font-size: 18px;
     }
