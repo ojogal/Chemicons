@@ -42,7 +42,7 @@ export default {
       </div>
     </div>
     <div class="content">
-      <div class="paragraph-text">
+      <div class="paragraph-text-wrapper">
         <p>As a young scientist with a background in pharmaceutical technology and hands-on experience in organic
           synthesis,
           I've embarked on a mission to bridge the gap between science and design. This website is a testament to the
@@ -61,8 +61,6 @@ export default {
               :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
               @click="(e) => { copySVGContent(index, icon) }">
             </div>
-            <!-- <img v-if="!(this.copied === index)" :src="`assets/images/${icon}`"
-              @click="(e) => { copySVGContent(index, icon) }" alt=""> -->
             <p v-if="!(this.copied === index)">{{ icon.split('/').pop().split('.')[0].replace('_', ' ') }}</p>
             <div v-if="this.copied === index" class="copied-card">
               <p>Copied</p>
@@ -82,7 +80,6 @@ h1 {
   font-family: 'Noto Sans', sans-serif;
   font-size: 48px;
 }
-
 .head-text {
   gap: 20px;
   display: flex;
@@ -91,12 +88,10 @@ h1 {
   @media (max-width: 780px) {
     flex-direction: column;
   }
-
   h1 {
     margin: 0;
     line-height: 1;
   }
-
   .icon-details {
     margin-top: auto;
 
@@ -106,22 +101,18 @@ h1 {
     }
   }
 }
-
 .content {
   display: flex;
   gap: 20px;
   min-height: 100vh;
-
   @media (max-width: 1440px) {
     flex-direction: column;
   }
-
   .icon-card {
     display: flex;
     flex-direction: column;
     max-width: 150px;
-    width: 150px;
-    max-height: 150px;
+    width: 100%;
     height: 150px;
     margin: auto;
     padding: 24px;
@@ -131,33 +122,20 @@ h1 {
     border-radius: 24px;
     background: #F0F0F3;
     box-shadow: -3px -3px 16px 0px #FFF, 8px 8px 16px 0px #DEDEDE;
-
     @media (max-width: 1240px) {
       width: min(150px, 7rem);
-      height: min(150px, 9rem);
+      height: min(150px, 10rem);
     }
-
     p {
       font-family: Newsreader;
       font-size: 13px;
       font-weight: 500;
       margin: 15px 0 0 0;
     }
-
-    img {
-      height: 100px;
-      width: 100px;
-      margin-top: auto !important;
-      margin-bottom: auto !important;
-      opacity: 85%;
-      cursor: pointer;
-    }
   }
-
   .load-more-wrapper {
     display: flex;
     justify-content: center;
-
     button {
       border: none;
       background: none;
@@ -166,7 +144,6 @@ h1 {
       font-size: 16px;
     }
   }
-
   .info-paragraph {
     line-height: 0;
     margin-top: 20px;
@@ -176,38 +153,40 @@ h1 {
     p {
       font-weight: 500;
       margin-left: auto;
+
+      @media (max-width: 1440px) {
+        // margin-right: 40px;
+      }
     }
   }
-
   .icons-section {
-    margin-bottom: 60px;
+    margin-bottom: 60px !important;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin: 0 auto;
-
     @media (max-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
     }
-
     @media (max-width: 572px) {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
 
-  .paragraph-text {
+    // @media (max-width: 380px) {
+    //   grid-template-columns: repeat(1, 1fr);
+    // }
+  }
+  .paragraph-text-wrapper {
     p {
       max-width: 250px;
       margin: 0;
       text-align: justify;
       font-size: 14px;
-
       @media (max-width: 1440px) {
         max-width: 550px
       }
     }
   }
-
   .copied-card {
     p {
       font-size: 18px;
