@@ -6,7 +6,14 @@ process.env.STATIC_REFERRAL_DOCS = files.reverse().join("$")
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [],
-  $meta: [{ viewport: 'width=device-width, initial-scale=1.0, user-scalable=no', }],
+  $meta: [{
+    viewport: 'width=device-width, initial-scale=1.0, user-scalable=no',
+  },
+  {
+    name: 'description',
+    content: 'A source for chemistry themed SVG icons that anyone can use for free',
+  },
+  ],
   app: {
     head: {
       charset: 'utf-8',
@@ -15,6 +22,7 @@ export default defineNuxtConfig({
         'data-ad-client': 'ca-pub-8269338553074223',
         async: true
       }],
+      title: "Chemical icons pack",
     },
   },
   css: ['~/assets/scss/main.scss'],
