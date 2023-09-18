@@ -59,7 +59,7 @@ export default {
           <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card">
             <div v-if="!(this.copied === index)"
               :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
-              @click="() => copySVGContent(index, icon)">
+              @click="copySVGContent(index, icon)">
             </div>
             <p v-if="!(this.copied === index)">{{ icon.split('/').pop().split('.')[0].replace('_', ' ') }}</p>
             <div v-if="this.copied === index" class="copied-card">
