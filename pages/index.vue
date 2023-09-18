@@ -24,7 +24,8 @@ export default {
   },
   mounted() {
     const assets = useAssets();
-    this.icons = assets.split("$")
+    this.icons = assets.split("$");
+    document.querySelectorAll(".icon-card").forEach(e => e.addEventListener("touchend", () => { this.copySVGContent(e.id, this.icons[Number(e.id)]) }));
   }
 };
 </script>
@@ -56,7 +57,7 @@ export default {
           <p>Click on icon to copy SVG content</p>
         </div>
         <div class="icons-section">
-          <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card">
+          <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card" :id="index">
             <div v-if="!(this.copied === index)"
               :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
               @click="copySVGContent(index, icon)"
