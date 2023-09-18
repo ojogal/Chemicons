@@ -240,6 +240,7 @@ h1 {
   .copied-card {
     p {
       font-size: 18px;
+      margin: auto;
     }
   }
 }
