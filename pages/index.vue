@@ -25,7 +25,7 @@ export default {
   mounted() {
     const assets = useAssets();
     this.icons = assets.split("$");
-    document.querySelectorAll(".icon-card").forEach(e => e.addEventListener("touchend", () => { this.copySVGContent(e.id, this.icons[Number(e.id)]) }));
+    document.querySelectorAll(".icon-card").forEach(e => e.addEventListener("touchend", () => { console.log("ID:", e.id); console.log("ICONS:", this.icons[Number(e.id)]); this.copySVGContent(e.id, this.icons[Number(e.id)]) }));
   }
 };
 </script>
