@@ -45,7 +45,7 @@
     margin-left: auto;
     @media (max-width: 864px) {
       margin-left: 0;
-      line-height: 1;
+      // line-height: 1;
     }
   }
 }
