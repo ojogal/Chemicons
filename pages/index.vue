@@ -12,7 +12,20 @@ export default {
         fetch(`/assets/images/${imgSrc}`)
           .then((response) => response.text())
           .then(async (svgContent) => {
-            await navigator.clipboard.writeText(svgContent);
+            // if (navigator.clipboard && 0) {
+            //   // Use the Clipboard API to write text to the clipboard
+            //   await navigator.clipboard.writeText(svgContent)
+            // } else {
+              // If Clipboard API is not available, use a fallback method
+              // This can include creating a temporary input element and selecting the text
+              const tempInput = document.createElement("input");
+              tempInput.value = svgContent;
+              document.body.appendChild(tempInput);
+              tempInput.select();
+              tempInput.setSelectionRange(0,99999);// For mobile devices
+              document.execCommand("copy");
+              document.body.removeChild(tempInput);
+            // }
             this.copied = index;
             setTimeout(() => { this.copied = -1 }, 3000)
           })
@@ -57,17 +70,19 @@ export default {
           <p>Click on icon to copy SVG content</p>
         </div>
         <div class="icons-section">
-          <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card" :id="index">
+         <ClientOnly>
+          <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card"
+            :id="index">
             <div v-if="!(this.copied === index)"
               :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
-              @click="copySVGContent(index, icon)"
-              @touchstart="copySVGContent(index, icon)">
+              @click="copySVGContent(index, icon)" @touchstart="copySVGContent(index, icon)">
             </div>
             <p v-if="!(this.copied === index)">{{ icon.split('/').pop().split('.')[0].replace('_', ' ') }}</p>
             <div v-if="this.copied === index" class="copied-card">
               <p>Copied</p>
             </div>
           </div>
+        </ClientOnly>
         </div>
         <div class="load-more-wrapper" v-if="(page * pageSize + pageSize) <= icons.length - 1">
           <button @click="page++">Load more</button>

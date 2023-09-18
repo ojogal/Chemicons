@@ -11,13 +11,16 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       
-      script: [{}],
+      script: [{
+
+      }],
     },
   },
   css: ['~/assets/scss/main.scss'],
   runtimeConfig: {
     public: {
       files: process.env.STATIC_REFERRAL_DOCS || "",
+      gtagId: "G-L2CLJS9S80",
     }
   },
   imports: { dirs: ["composables/**"] }
