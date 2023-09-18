@@ -10,9 +10,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
-      
       script: [{
-
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': 'ca-pub-8269338553074223',
+        async: true
       }],
     },
   },
