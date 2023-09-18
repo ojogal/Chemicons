@@ -6,7 +6,7 @@ process.env.STATIC_REFERRAL_DOCS = files.reverse().join("$")
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [],
-  $meta: [{ viewport: 'width=device-width, initial-scale=1.0', }],
+  $meta: [{ viewport: 'width=device-width, initial-scale=1.0, user-scalable=no', }],
   app: {
     head: {
       charset: 'utf-8',
