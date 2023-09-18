@@ -5,7 +5,8 @@ process.env.STATIC_REFERRAL_DOCS = files.reverse().join("$")
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: [],
+  modules: [
+  ],
   $meta: [{
     viewport: 'width=device-width, initial-scale=1.0, user-scalable=no',
   },
@@ -32,5 +33,5 @@ export default defineNuxtConfig({
       gtagId: "G-L2CLJS9S80",
     }
   },
-  imports: { dirs: ["composables/**"] }
+  imports: { dirs: ["composables/**"] },
 })
