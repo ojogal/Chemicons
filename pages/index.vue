@@ -231,7 +231,7 @@ h1 {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 368px) {
+    @media (max-width: 390px) {
       gap: 10px
     }
   }
