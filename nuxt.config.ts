@@ -14,6 +14,22 @@ export default defineNuxtConfig({
     name: 'description',
     content: 'A source for chemistry themed SVG icons that anyone can use for free',
   },
+  {
+    name: 'title',
+    content: 'Chemical icons pack',
+  },
+  {
+    name: 'keywords',
+    content: 'chemistry, icons, icon pack, free, chemicons',
+  },
+  {
+    name: 'robots',
+    content: 'index, follow',
+  },
+  {
+    name: 'Content-Type',
+    content: 'text/html; charset=utf-8',
+  },
   ],
   app: {
     head: {
