@@ -41,46 +41,44 @@ export default {
     <Title>Chemical icons pack</Title>
   </Head>
   <div class="limited-width">
-    <div class="head-text">
-      <h1>CHEMICAL ICONS PACK</h1>
-      <div class="icon-details">
-        <p>color: 000000</p>
-        <p>size: 100x100px</p>
+    <div>
+      <div class="head-text">
+        <h1>CHEMICAL ICON PACK</h1>
       </div>
-    </div>
-    <div class="content">
-      <div class="paragraph-text-wrapper">
-        <p>As a young scientist with a background in pharmaceutical technology and hands-on experience in organic
-          synthesis,
-          I've embarked on a mission to bridge the gap between science and design. This website is a testament to the
-          incredible world of chemistry, where chemical formulas come to life as easy to use SVG icons. Whether you're a
-          researcher seeking visually appealing representations of your work, an educator looking to make chemistry
-          engaging, or simply someone who appreciates the artistry of science, this website offers a design solution for
-          you.</p>
-      </div>
-      <div>
-        <div class="info-paragraph">
-          <p>Click on icon to {{isMobile ? 'download' : 'copy'}} SVG content</p>
-        </div>
-        <div class="icons-section">
-          <ClientOnly>
-            <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card"
-              :id="index">
-              <a v-if="!(this.copied === index)"
-                :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
-                @click="() => !isMobile ? copySVGContent(index, icon) : void(0)"
-                :download="isMobile ? icon : null"
-                :href="isMobile ? `/assets/images/${icon}` : `javascript:void(0)`">
-          </a>
-              <p v-if="!(this.copied === index)">{{ icon.split('/').pop().split('.')[0].replace('_', ' ') }}</p>
-              <div v-if="this.copied === index" class="copied-card">
-                <p>Copied</p>
+      <div class="content">
+        <div>
+          <div class="info-paragraph">
+            <div>
+              <p>Click on icon to {{ isMobile ? 'download' : 'copy' }} SVG content</p>
+            </div>
+            <div class="icon-details">
+              <div>
+                <p>color: 000000</p>
+              </div>
+              <div>
+                <p>size: 100x100px</p>
               </div>
             </div>
-          </ClientOnly>
-        </div>
-        <div class="load-more-wrapper" v-if="(page * pageSize + pageSize) <= icons.length - 1">
-          <button @click="page++">Load more</button>
+          </div>
+          <div class="icons-section">
+            <ClientOnly>
+              <div v-for="(icon, index) of icons.slice(0, page * pageSize + pageSize)" :key="icon" class="icon-card"
+                :id="index">
+                <a v-if="!(this.copied === index)"
+                  :style="{ backgroundImage: `url(assets/images/${icon})`, width: '100%', height: '100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', cursor: 'pointer' }"
+                  @click="() => !isMobile ? copySVGContent(index, icon) : void (0)" :download="isMobile ? icon : null"
+                  :href="isMobile ? `/assets/images/${icon}` : `javascript:void(0)`">
+                </a>
+                <p v-if="!(this.copied === index)">{{ icon.split('/').pop().split('.')[0].replace('_', ' ') }}</p>
+                <div v-if="this.copied === index" class="copied-card">
+                  <p>Copied</p>
+                </div>
+              </div>
+            </ClientOnly>
+          </div>
+          <div class="load-more-wrapper" v-if="(page * pageSize + pageSize) <= icons.length - 1">
+            <button @click="page++">Load more</button>
+          </div>
         </div>
       </div>
     </div>
@@ -90,15 +88,8 @@ export default {
 <style scoped lang="scss">
 @import "~/assets/scss/_variables";
 
-h1 {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 48px;
-}
-
 .head-text {
-  gap: 20px;
-  display: flex;
-  margin-bottom: 10px;
+  padding-bottom: 40px;
 
   @media (max-width: 867px) {
     flex-direction: column;
@@ -107,19 +98,31 @@ h1 {
   h1 {
     margin: 0;
     line-height: 1;
+    letter-spacing: 0.01em;
+    font-family: 'Hanuman';
+    font-weight: 700;
+    font-size: 78px;
+    text-align: center;
+
+    @media (max-width: 1085px) {
+      font-size: 70px !important;
+    }
+
+    @media (max-width: 995px) {
+      font-size: 60px !important;
+    }
+
+    @media (max-width: 876px) {
+      font-size: 50px !important;
+    }
+
+    @media (max-width: 759px) {
+      font-size: 45px !important;
+    }
 
     @media (max-width: 608px) {
       font-size: 36px;
       text-align: center;
-    }
-  }
-
-  .icon-details {
-    margin-top: auto;
-
-    p {
-      margin: 0;
-      font-weight: 500;
     }
   }
 }
@@ -157,9 +160,10 @@ h1 {
     }
 
     p {
-      font-family: Newsreader;
-      font-size: 13px;
+      font-family: 'Inter';
+      font-size: 12px;
       font-weight: 500;
+      letter-spacing: 0.03em;
       margin: 0px 15px 25px 15px;
     }
   }
@@ -180,38 +184,29 @@ h1 {
 
   .info-paragraph {
     line-height: 0;
-    margin-top: 20px;
-    margin-bottom: 10px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
 
-    @media (max-width: 1526px) {
-      margin-top: 0;
+    @media (max-width: 594px) {
+      flex-direction: column;
+      text-align: center;
+      > .icon-details {
+        justify-content: center !important;
+      }
     }
 
     p {
-      font-weight: 500;
-      margin-left: auto;
-
-      @media (max-width: 1526px) {
-        margin-right: 45px;
-      }
-
-      @media (max-width: 1380px) {
-        margin-right: 35px;
-      }
-
-      @media (max-width: 1280px) {
-        margin-right: 25px;
-      }
-
-      @media (max-width: 1240px) {
-        margin-right: 0;
-      }
-
-      @media (max-width: 680px) {
-        margin-left: 0;
-      }
+      font-weight: 400;
     }
+  }
+
+  .icon-details {
+    display: flex;
+    gap: 20px;
   }
 
   .icons-section {
@@ -223,11 +218,10 @@ h1 {
     width: 100%;
 
     @media (max-width: 924px) {
-      // gap: 20px;
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media (max-width: 546px) {
+    @media (max-width: 594px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -251,8 +245,10 @@ h1 {
 
   .copied-card {
     p {
-      font-size: 18px;
+      font-family: 'Hanuman';
+      font-size: 20px;
       margin: auto;
+      font-weight: 400;
     }
   }
 }
