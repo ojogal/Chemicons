@@ -14,5 +14,8 @@
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "nuxt": "^3.7.3",
     "sass": "^1.68.0"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
   }
 }
