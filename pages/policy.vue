@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <div class="limited-width">
+  <div class="limited-width-policy">
 <h1>Privacy Policy for Chemicons</h1>
 
 <p>At Chemicons, accessible from https://chemicons.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Chemicons and how we use it.</p>
@@ -93,5 +93,27 @@
 </div>
 </template>
 
-<style>
+<style scoped>
+.limited-width-policy {
+
+  padding-left: 240px;
+  padding-right: 240px;
+  padding-top: 20px;
+
+  @media (max-width: 1526px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media (max-width: 740px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 368px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
 </style>
